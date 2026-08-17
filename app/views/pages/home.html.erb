@@ -1,0 +1,97 @@
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-container">
+    <span class="hero-badge">Government of Montserrat</span>
+    <h1 class="hero-title">Learning Management System</h1>
+    <p class="hero-subtitle">
+      A centralized grade reporting portal for students, parents, and educators across Montserrat's primary and secondary schools.
+    </p>
+   
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Island Schools</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label"> Grade Access</span>
+      </div>
+    </div>
+  </div>
+  <ul class="hero-links">
+    <li><%= link_to "Log in", root_path, class: "login-oval" %></li>
+</ul> 
+     
+    
+</section>
+
+<div class="lms-landing-container" style="font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; color: #333; line-height: 1.6;">
+
+  <section class="modernise-section" style="text-align: center;">
+    <h2 style="font-size: 2rem; color: #000102; margin-bottom: 20px;">
+      Ready to Modernise Your School?
+    </h2>
+    <p style="font-size: 1.1rem; color: #4b4c63; margin-bottom: 30px; max-width: 650px; margin-left: auto; margin-right: auto;">
+      Stop filling out manual spreadsheets, handwriting report cards, and wasting money printing paper lesson sheets. With a quick upload to <strong>Montserrat LMS</strong>, your students can access everything they need online, from any device and from any location.
+    </p>
+  
+    
+</div>
+
+  <%
+  cards = [
+    { 
+      title: "Student Information System", 
+      text: "Centralised student records — enrolment, academic history, attendance, and parent contacts — in one secure database." 
+    },
+    { 
+      title: "Grades & Assessments", 
+      text: "Teachers enter grades digitally. Automatic GPA calculations, report cards, and performance tracking built in." 
+    },
+    { 
+      title: "Timetabling & Attendance", 
+      text: "Automated timetable generation and digital attendance registers. Absence alerts sent to parents automatically." 
+    },
+    { 
+      title: "Reports", 
+      text: "Instant reports for principals and Ministry submissions — without hours of manual data compilation." 
+    },
+    { 
+      title: "Course & Lesson Management", 
+      text: "Organize courses, lessons, and learning materials in one place. Students can easily access their classes, study resources, and assigned learning activities." 
+    },
+    { 
+      title: "Student Performance Tracking", 
+      text: "Monitor student grades, progress, and academic performance in one place. Teachers can identify areas for improvement and track development over time." 
+    },
+  ]
+%>
+
+<div style="font-family: sans-serif; max-width: 1200px; margin: 0 auto; padding: 60px 20px; text-align: center;">
+
+  <h1>What Can Montserrat LMS Do for Your School?</h1>
+  <p style="color: #000001; max-width: 800px; margin: 0 auto 40px auto;">
+    Montserrat LMS replaces disconnected spreadsheets, paper registers, and WhatsApp groups with one integrated system — built for how Caribbean schools actually work.
+  </p>
+
+  <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
+    
+    <% cards.each do |card| %>
+      <div style="flex: 1; min-width: 240px; max-width: 280px; background-color: #ffffff; border: 1px solid #f3f4f6; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align: left;">
+        
+        <h3 style="font-size: 1.25rem; color: #0f172a; margin-bottom: 12px; font-weight: bold;">
+          <%= card[:title] %>
+        </h3>
+
+        <p style="font-size: 0.95rem; color: #6b7280; margin: 0; line-height: 1.6;">
+          <%= card[:text] %>
+        </p>
+
+      </div>
+    <% end %>
+
+  </div>
+</div>

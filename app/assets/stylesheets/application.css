@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Montserrat LMS Navbar Customisation
+   ========================================================================== */
+
+/* Main layout background and spacing */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Puts logo on left, links on right */
+  align-items: center;
+  background-color: #1a252f;      /* Dark corporate blue */
+  padding: 15px 40px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Styling the brand logo */
+.nav-brand a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* Base navigation list layout */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;                      /* Controls spacing between top links */
+  margin: 0;
+  padding: 0;
+}
+
+/* Standard top-level navigation links */
+.nav-links > li > a, 
+.dropdown-trigger {
+  color: #e2e8f0;                 /* Soft off-white */
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;    /* Makes hover effect smooth */
+  cursor: pointer;
+}
+
+/* Top-level links hover state */
+.nav-links > li > a:hover, 
+.dropdown-trigger:hover {
+  color: #3498db;                 /* Vibrant bright blue */
+}
+
+/* --- Dropdown Customisation --- */
+
+/* Keeps the dropdown box locked beneath the parent item */
+.dropdown {
+  position: relative;
+}
+
+/* The actual hidden dropdown box */
+.dropdown-menu {
+  display: none;                  /* Kept hidden until hovered */
+  position: absolute;
+  top: 100%;                      /* Forces box directly beneath top link */
+  left: 0;
+  background-color: #ffffff;      /* Clean white background for dropdowns */
+  min-width: 180px;
+  list-style: none;
+  padding: 8px 0;
+  margin-top: 10px;               /* Small gap beneath top link */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 6px;             /* Gives the box sleek, rounded corners */
+  z-index: 1000;
+}
+
+/* Links inside the dropdown box */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333333;                 /* Dark text for contrast against white */
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Hovering over links inside the dropdown box */
+.dropdown-menu li a:hover {
+  background-color: #f8fafc;      /* Very light grey highlight background */
+  color: #3498db;                 /* Blue text color change */
+}
+
+/* TRIGGER ACTION: Displays menu immediately when mouse hovers over .dropdown parent */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+img {
+  width: 45px !important;       /* Forces a small, controlled size */
+  height: 45px !important;      /* Must exactly match width to prevent an oval */
+  border-radius: 50% !important;/* Cuts the square edges into a perfect circle */
+  object-fit: cover !important; /* Stops the image from distorting or stretching */
+}
+/*
+  HERO SECTION STYLES
+  */
+.hero {
+   width: 100%;
+  position: relative;
+ 
+  
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+}
+
+.hero-container {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Stat Counter Bar */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 600px) {
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+ 
+  .hero-title {
+    font-size: 1.85rem;
+  }
+ 
+  .hero-stats {
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+.login-oval {
+  display: inline-block;
+  padding: 10px 30px;        /* 10px top/bottom, 30px left/right creates the long oval shape */
+  border: 2px solid white;   /* Draws the outline */
+  border-radius: 50px;       /* Curve edges completely into a capsule/oval shape */
+  color: white;              /* Text color */
+  text-decoration: none;     /* Removes the hyperlink underline */
+  text-align: center;
+  margin-right: 30px;
+}
+html, body {
+  max-width: 100%;    
+  overflow-x: hidden ;
+}
+
+.navbar-brand span{display: inline-block; 
+  transform: translateY(-14px)}

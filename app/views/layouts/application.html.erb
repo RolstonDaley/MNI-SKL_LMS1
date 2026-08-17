@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 1. The title that shows up on the browser tab -->
+    <title><%= content_for(:title) || "My First Rails App" %></title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <!-- 2. Security tags that Rails requires behind the scenes -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- 3. Links to your CSS styling and JavaScript files -->
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <!-- 1. FLASH MESSAGES (Shows success alerts or login errors at the top) -->
+    <% if flash.any? %>
+      <div style="max-width: 1200px; margin: 10px auto; padding: 0 20px;">
+        <% flash.each do |type, message| %>
+          <div style="padding: 10px; margin-bottom: 10px; border-radius: 4px; 
+                      background-color: <%= type == 'notice' ? '#d4edda' : '#f8d7da' %>; 
+                      color: <%= type == 'notice' ? '#155724' : '#721c24' %>;">
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= render "layouts/navbar" %>
+
+    <!-- 3. MAIN CONTENT (Where your views load) -->
+    <main style="max-width: 100%; margin: 10px auto; padding: 0 0px; min-height: 70vh;">
+      <%= yield %>
+    </main>
+
+    <!-- 4. FOOTER -->
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px;">
+      <p>&copy; <%= Time.current.year %> Montserrat LMS</p>
+      <!-- CORRECT: Links are inside the footer tags -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <%= link_to 'About Us', root_path %>
+    <%= link_to 'Customer Support', root_path %>
+  </div>
+</footer>
+
+    </footer>
+  </body>
+</html>
