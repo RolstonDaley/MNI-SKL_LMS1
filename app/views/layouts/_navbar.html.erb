@@ -1,68 +1,114 @@
 <!-- ==========================================================================
-     Navbar HTML Component
+     Modern Navbar Component
      ========================================================================== -->
 <nav class="navbar">
-  <!-- Website Logo / Brand Link -->
-  <div class="nav-brand">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "ChatGPT Image Aug 7, 2026, 02_48_33 PM.png", alt: "lms logo", class: "navbar-logo" %>
-      <span>Montserrat LMS</span> 
+  <div class="navbar-container">
+    
+    <!-- Website Logo / Brand Link -->
+    <div class="nav-brand">
+      <%= link_to root_path, class: "navbar-brand-link" do %>
+        <%= image_tag "ChatGPT Image Aug 7, 2026, 02_48_33 PM.png", alt: "Montserrat LMS Logo", class: "navbar-logo" %>
+        <div class="brand-text">
+          <span class="brand-title">Montserrat LMS</span>
+          <span class="brand-badge">Gov Portal</span>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
       
-       </div>
-    <% end %>
-    
+      <!-- School Dropdown -->
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-trigger">
+          <span>School</span>
+          <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Montserrat Secondary School (MSS)", "#", class: "dropdown-item" %></li>
+          <li><%= link_to "Look Out Primary School (LOPS)", "#", class: "dropdown-item" %></li>
+          <li><%= link_to "Brades Primary School (BPS)", "#", class: "dropdown-item" %></li>
+        </ul>
+      </li>
 
-  <!-- Navigation Links -->
-  <ul class="nav-links">
-    <li><%= link_to "PROFILE", root_path %></li>
-    
-    <li><%= link_to "NOTIFICATIONS", "#" %></li>
+      <!-- Subjects Mega-Menu Dropdown -->
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-trigger">
+          <span>Subjects</span>
+          <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <div class="dropdown-menu mega-menu">
+          <div class="mega-column">
+            <h4 class="mega-heading">Core & STEM</h4>
+            <%= link_to "Mathematics", "#", class: "dropdown-item" %>
+            <%= link_to "English Language", "#", class: "dropdown-item" %>
+            <%= link_to "Integrated Science", "#", class: "dropdown-item" %>
+            <%= link_to "Biology", "#", class: "dropdown-item" %>
+            <%= link_to "Chemistry", "#", class: "dropdown-item" %>
+            <%= link_to "Physics", "#", class: "dropdown-item" %>
+            <%= link_to "Computer Science", "#", class: "dropdown-item" %>
+            <%= link_to "Information Technology", "#", class: "dropdown-item" %>
+            <%= link_to "Technical Drawing", "#", class: "dropdown-item" %>
+          </div>
 
-    <li><%= link_to "MESSAGES", "#" %></li>
-    
-    <!-- Dropdown Menu for Courses -->
-    <li class="dropdown">
-      <a href="#" class="dropdown-trigger">SCHOOL▾</a>
-      <ul class="dropdown-menu">
-       <li><%= link_to "LOPS", "#" %></li>
-        <li><%= link_to "SAS", "#" %></li>
-        <li><%= link_to "BPS", "#" %></li>
-     </ul>
-    </li>
-    
+          <div class="mega-column">
+            <h4 class="mega-heading">Humanities & Business</h4>
+            <%= link_to "Social Studies", "#", class: "dropdown-item" %>
+            <%= link_to "History", "#", class: "dropdown-item" %>
+            <%= link_to "Geography", "#", class: "dropdown-item" %>
+            <%= link_to "Economics", "#", class: "dropdown-item" %>
+            <%= link_to "Business Studies", "#", class: "dropdown-item" %>
+            <%= link_to "Principles of Accounts", "#", class: "dropdown-item" %>
+            <%= link_to "Agricultural Science", "#", class: "dropdown-item" %>
+            <%= link_to "Religious Education", "#", class: "dropdown-item" %>
+          </div>
 
-    <!-- Dropdown Menu for Account -->
-    <li class="dropdown">
-      <a href="#" class="dropdown-trigger">SUBJECTS▾</a>
-      <ul class="dropdown-menu">
-        <li><%= link_to "MATHEMATICS", "#" %></li>
-        <li><%= link_to "ENGLISH", "#" %></li>
-<li><%= link_to "SCIENCE", "#" %></li>
-<li><%= link_to "SOCIAL STUDIES", "#" %></li>
-<li><%= link_to "HISTORY", "#" %></li>
-<li><%= link_to "GEOGRAPHY", "#" %></li>
-<li><%= link_to "BIOLOGY", "#" %></li>
-<li><%= link_to "CHEMISTRY", "#" %></li>
-<li><%= link_to "PHYSICS", "#" %></li>
-<li><%= link_to "COMPUTER SCIENCE", "#" %></li>
-<li><%= link_to "INFORMATION TECHNOLOGY", "#" %></li>
-<li><%= link_to "ECONOMICS", "#" %></li>
-<li><%= link_to "BUSINESS STUDIES", "#" %></li>
-<li><%= link_to "ACCOUNTING", "#" %></li>
-<li><%= link_to "AGRICULTURAL SCIENCE", "#" %></li>
-<li><%= link_to "PHYSICAL EDUCATION", "#" %></li>
-<li><%= link_to "HEALTH SCIENCE", "#" %></li>
-<li><%= link_to "RELIGIOUS EDUCATION", "#" %></li>
-<li><%= link_to "SPANISH", "#" %></li>
-<li><%= link_to "FRENCH", "#" %></li>
-<li><%= link_to "MUSIC", "#" %></li>
-<li><%= link_to "ART", "#" %></li>
-<li><%= link_to "DRAMA", "#" %></li>
-<li><%= link_to "HOME ECONOMICS", "#" %></li>
-<li><%= link_to "TECHNICAL DRAWING", "#" %></li>
+          <div class="mega-column">
+            <h4 class="mega-heading">Languages & Arts</h4>
+            <%= link_to "Spanish", "#", class: "dropdown-item" %>
+            <%= link_to "French", "#", class: "dropdown-item" %>
+            <%= link_to "Visual Arts", "#", class: "dropdown-item" %>
+            <%= link_to "Music", "#", class: "dropdown-item" %>
+            <%= link_to "Theatre Arts / Drama", "#", class: "dropdown-item" %>
+            <%= link_to "Home Economics", "#", class: "dropdown-item" %>
+            <%= link_to "Physical Education", "#", class: "dropdown-item" %>
+            <%= link_to "Health Science", "#", class: "dropdown-item" %>
+          </div>
+        </div>
+      </li>
 
-      </ul>
-    </li>
-  </ul>
+      <!-- Notification Link -->
+      <li class="nav-item">
+        <%= link_to "#", class: "nav-link icon-link" do %>
+          <span>Notifications</span>
+          <span class="nav-counter">3</span>
+        <% end %>
+      </li>
+
+      <!-- Messages Link -->
+      <li class="nav-item">
+        <%= link_to "#", class: "nav-link icon-link" do %>
+          <span>Messages</span>
+        <% end %>
+      </li>
+
+      <!-- Profile / Login Button -->
+      <li class="nav-item">
+        <%= link_to login_path, class: "nav-profile-btn" do %>
+          <div class="avatar-circle">
+            <!-- User silhouette icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+         
+        <% end %>
+      </li>
+
+    </ul>
+  </div>
 </nav>
-

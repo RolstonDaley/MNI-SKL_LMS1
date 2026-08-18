@@ -1,0 +1,56 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-header">
+      <span class="badge badge-primary">Portal Access</span>
+      <h1 class="auth-title">Sign In</h1>
+      <p class="auth-subtitle">Enter your credentials to access your grade dashboard.</p>
+    </div>
+
+    <%= form_with url: login_path, method: :post, local: true, class: "auth-form" do |f| %>
+      
+      <!-- Institution Selector -->
+      <div class="form-group">
+        <%= f.label :school, "Institution / School", class: "form-label" %>
+        <%= f.select :school, options_for_select(@schools, @selected_school), {}, class: "form-control" %>
+      </div>
+
+      <!-- Role Selector (Student vs Teacher) -->
+      <div class="form-group">
+        <label class="form-label">I am logging in as:</label>
+        <div class="role-selector">
+          <label class="role-option">
+            <%= f.radio_button :role, "student", checked: true %>
+            <span>Student</span>
+          </label>
+          <label class="role-option">
+            <%= f.radio_button :role, "teacher" %>
+            <span>Teacher / Staff</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Email / Student ID -->
+      <div class="form-group">
+        <%= f.label :email, "Email or Student ID", class: "form-label" %>
+        <%= f.text_field :email, placeholder: "e.g. s.adams@mss.edu.ms", required: true, class: "form-control" %>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <%= f.label :password, "Password", class: "form-label" %>
+        <%= f.password_field :password, placeholder: "••••••••", required: true, class: "form-control" %>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <%= f.submit "Sign In to Portal", class: "btn btn-primary w-100" %>
+      </div>
+    <% end %>
+
+    <div class="auth-footer">
+      <p class="text-muted small">
+        Need assistance with your account? Contact your school's IT coordinator.
+      </p>
+    </div>
+  </div>
+</div>
